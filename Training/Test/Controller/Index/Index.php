@@ -18,7 +18,7 @@ class Index extends \Magento\Framework\App\Action\Action
     public function execute()
     {
         $resultRaw = $this->resultRawFactory->create();
-        $resultRaw->setContents('simple text');
+        $resultRaw->setContents($this->getRequest()->isAjax());
         return $resultRaw;
     }
 }
